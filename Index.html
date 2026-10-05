@@ -1,529 +1,299 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kausser Solutions | Technology Sales Consultancy & Advisory</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kausser Solutions | Sales Consultancy & Technical SME</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            950: '#04080e',
-                            900: '#07101a',
-                            850: '#0a1420',
-                            800: '#0e1b2b',
-                            700: '#14253a',
-                            600: '#1c324e'
-                        },
-                        gold: {
-                            100: '#fbf4e2',
-                            200: '#f5e4ba',
-                            300: '#ebd08d',
-                            400: '#dfb763',
-                            500: '#cfa35d',
-                            600: '#b88a44',
-                            700: '#966d31'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        montserrat: ['Montserrat', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+  <style>
+    :root {
+      --bg-dark: #071019;
+      --bg-card: #0d1b2a;
+      --navy-light: #15283c;
+      --gold-primary: #d4af37;
+      --gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #cba153 50%, #9a7b38 100%);
+      --gold-text: #e2c074;
+      --text-light: #f0f4f8;
+      --text-muted: #a0aec0;
+      --border-color: rgba(203, 161, 83, 0.25);
+    }
 
-    <style>
-        :root {
-            --brand-navy: #0a1420;
-            --brand-gold: #cfa35d;
-            --gold-gradient: linear-gradient(135deg, #ebd08d 0%, #cfa35d 50%, #966d31 100%);
-            --gold-gradient-soft: linear-gradient(135deg, #dfb763 0%, #cfa35d 100%);
-            --card-navy: #0e1b2b;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #07101a;
-            color: #e2e8f0;
-        }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
 
-        .font-brand {
-            font-family: 'Montserrat', sans-serif;
-        }
+    h1, h2, h3, h4, .nav-logo text {
+      font-family: 'Montserrat', sans-serif;
+    }
 
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #fceecb 0%, #dfb763 40%, #cfa35d 70%, #a87d37 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    /* --- Navigation Bar --- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 16, 25, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+    }
 
-        .gold-gradient-bg {
-            background: linear-gradient(135deg, #ebd08d 0%, #cfa35d 50%, #a87d37 100%);
-        }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
 
-        .gold-border {
-            border-color: rgba(207, 163, 93, 0.3);
-        }
+    /* Scalable vector logo representation */
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      background: var(--gold-gradient);
+      clip-path: polygon(0% 0%, 25% 0%, 25% 42%, 60% 0%, 100% 0%, 55% 50%, 100% 100%, 60% 100%, 35% 72%, 25% 82%, 25% 100%, 0% 100%);
+    }
 
-        .gold-border-hover:hover {
-            border-color: rgba(207, 163, 93, 0.8);
-        }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
 
-        .gold-glow {
-            box-shadow: 0 4px 20px -2px rgba(207, 163, 93, 0.25);
-        }
+    .logo-text .brand-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gold-text);
+      line-height: 1.1;
+    }
 
-        .gold-glow-hover:hover {
-            box-shadow: 0 8px 25px -2px rgba(207, 163, 93, 0.4);
-        }
+    .logo-text .brand-sub {
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
 
-        .diagonal-card {
-            background: linear-gradient(135deg, #0e1b2b 0%, #0a1420 100%);
-        }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
 
-        /* Subtle background grid pattern */
-        .bg-grid-pattern {
-            background-image: radial-gradient(rgba(207, 163, 93, 0.08) 1px, transparent 1px);
-            background-size: 28px 28px;
-        }
-    </style>
-</head>
-<body class="antialiased bg-navy-900 text-slate-200">
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
 
-    <header class="fixed top-0 left-0 w-full z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
-            <!-- Brand Logo with Exact SVG Emblem -->
-            <a href="#home" class="flex items-center space-x-3.5 group">
-                <div class="w-10 h-10 flex-shrink-0">
-                    <svg viewBox="0 0 300 300" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="brandGoldNav" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#ebd08d" />
-                                <stop offset="50%" stop-color="#cfa35d" />
-                                <stop offset="100%" stop-color="#966d31" />
-                            </linearGradient>
-                        </defs>
-                        <!-- Exact Geometric 'K' Mark matching Kausser Solutions logo -->
-                        <path d="M 50,30 L 105,30 L 105,210 L 50,210 Z" fill="url(#brandGoldNav)" />
-                        <path d="M 105,152 L 210,30 L 275,30 L 170,152 Z" fill="url(#brandGoldNav)" />
-                        <polygon points="170,152 270,270 270,210 210,138 105,138" fill="url(#brandGoldNav)" />
-                        <rect x="180" y="152" width="60" height="60" transform="rotate(45 180 152)" fill="url(#brandGoldNav)" />
-                    </svg>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-brand font-extrabold text-lg tracking-[0.15em] text-white group-hover:text-gold-300 transition leading-none">KAUSSER</span>
-                    <span class="font-brand text-[9px] tracking-[0.38em] gold-gradient-text font-bold uppercase mt-1">SOLUTIONS</span>
-                </div>
-            </a>
+    .nav-links a:hover {
+      color: var(--gold-primary);
+    }
 
-            <!-- Desktop Navigation Links -->
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition">Home</a>
-                <a href="#vendors" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition">Vendor Services</a>
-                <a href="#technical" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition">Technical SME</a>
-                <a href="#end-users" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition">End-User Solutions</a>
-                <a href="#contact" class="px-5 py-2.5 text-xs font-bold font-brand tracking-wider uppercase rounded gold-gradient-bg text-navy-950 hover:brightness-110 transition gold-glow">Get in Touch</a>
-            </nav>
+    /* --- Hero Section --- */
+    .hero {
+      padding: 100px 5% 80px;
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(21, 40, 60, 0.6) 0%, var(--bg-dark) 70%);
+      border-bottom: 1px solid var(--border-color);
+    }
 
-            <!-- Mobile Hamburger Toggle -->
-            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-gold-400 p-2 focus:outline-none" aria-label="Toggle menu">
-                <i class="fa-solid fa-bars text-xl"></i>
-            </button>
-        </div>
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border: 1px solid var(--gold-primary);
+      border-radius: 20px;
+      color: var(--gold-text);
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      background: rgba(212, 175, 55, 0.05);
+    }
 
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-b border-gold-500/20 px-6 py-5 space-y-4">
-            <a href="#home" class="mobile-nav-link block text-sm font-medium text-slate-300 hover:text-gold-400">Home</a>
-            <a href="#vendors" class="mobile-nav-link block text-sm font-medium text-slate-300 hover:text-gold-400">Vendor Services</a>
-            <a href="#technical" class="mobile-nav-link block text-sm font-medium text-slate-300 hover:text-gold-400">Technical SME</a>
-            <a href="#end-users" class="mobile-nav-link block text-sm font-medium text-slate-300 hover:text-gold-400">End-User Solutions</a>
-            <a href="#contact" class="mobile-nav-link block w-full text-center py-2.5 text-xs font-bold font-brand uppercase gold-gradient-bg text-navy-950 rounded">Get in Touch</a>
-        </div>
-    </header>
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #ffffff;
+      max-width: 900px;
+      margin: 0 auto 20px;
+      line-height: 1.2;
+    }
 
-    <section id="home" class="relative pt-32 pb-24 lg:pt-40 lg:pb-36 bg-navy-850 bg-grid-pattern overflow-hidden border-b border-gold-500/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Hero Left Content -->
-                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
-                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-navy-800 border border-gold-500/30 text-gold-400 text-xs font-medium">
-                        <span class="w-2 h-2 rounded-full gold-gradient-bg animate-pulse"></span>
-                        <span class="tracking-wider uppercase font-semibold text-[11px]">Kingdom of Saudi Arabia & Bahrain</span>
-                    </div>
+    .hero h1 span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black font-brand text-white leading-tight">
-                        Connecting <span class="gold-gradient-text">Technology Providers</span> with Saudi Industry Leaders
-                    </h1>
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 750px;
+      margin: 0 auto 35px;
+    }
 
-                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                        Specialised sales consultancy & strategic technical market integration for technology vendors expanding into <strong>Saudi Aramco, SABIC, Saudi Electricity Company (SEC)</strong>, and regional industrial end-users.
-                    </p>
+    .btn-gold {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--gold-gradient);
+      color: var(--bg-dark);
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-                    <!-- Target Client Tags -->
-                    <div class="pt-2">
-                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Key Integration Partners & Ecosystems</p>
-                        <div class="flex flex-wrap justify-center lg:justify-start gap-2.5">
-                            <span class="px-3 py-1 bg-navy-800 border border-gold-500/20 rounded text-xs text-slate-300 font-medium">Saudi Aramco</span>
-                            <span class="px-3 py-1 bg-navy-800 border border-gold-500/20 rounded text-xs text-slate-300 font-medium">SABIC</span>
-                            <span class="px-3 py-1 bg-navy-800 border border-gold-500/20 rounded text-xs text-slate-300 font-medium">SEC</span>
-                            <span class="px-3 py-1 bg-navy-800 border border-gold-500/20 rounded text-xs text-slate-300 font-medium">GCC Energy & Petrochemical</span>
-                        </div>
-                    </div>
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+    }
 
-                    <!-- Call To Action Buttons -->
-                    <div class="pt-4 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                        <a href="#contact" class="px-8 py-3.5 rounded font-brand font-bold text-xs uppercase tracking-wider gold-gradient-bg text-navy-950 hover:brightness-110 transition shadow-lg gold-glow">
-                            Schedule Strategic Consultation <i class="fa-solid fa-arrow-right ml-2"></i>
-                        </a>
-                        <a href="#vendors" class="px-8 py-3.5 rounded font-brand font-bold text-xs uppercase tracking-wider border border-gold-500/40 text-gold-400 hover:bg-gold-500/10 transition">
-                            Explore Services
-                        </a>
-                    </div>
-                </div>
+    /* --- Section Containers --- */
+    .section {
+      padding: 80px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-                <!-- Hero Right Card Recreating Logo Branding -->
-                <div class="lg:col-span-5 flex justify-center">
-                    <div class="relative w-full max-w-md p-8 sm:p-10 rounded-2xl bg-navy-800 border border-gold-500/30 text-center shadow-2xl">
-                        <div class="w-36 h-36 mx-auto mb-6">
-                            <svg viewBox="0 0 300 300" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="brandGoldHero" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#ebd08d" />
-                                        <stop offset="50%" stop-color="#cfa35d" />
-                                        <stop offset="100%" stop-color="#966d31" />
-                                    </linearGradient>
-                                </defs>
-                                <path d="M 50,30 L 105,30 L 105,210 L 50,210 Z" fill="url(#brandGoldHero)" />
-                                <path d="M 105,152 L 210,30 L 275,30 L 170,152 Z" fill="url(#brandGoldHero)" />
-                                <polygon points="170,152 270,270 270,210 210,138 105,138" fill="url(#brandGoldHero)" />
-                                <rect x="180" y="152" width="60" height="60" transform="rotate(45 180 152)" fill="url(#brandGoldHero)" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-black font-brand tracking-widest text-white">KAUSSER</h3>
-                        <p class="text-xs font-bold font-brand tracking-[0.35em] gold-gradient-text uppercase mt-1 mb-4">SOLUTIONS</p>
-                        <div class="w-12 h-0.5 gold-gradient-bg mx-auto mb-4"></div>
-                        <p class="text-xs text-slate-300 italic leading-relaxed">
-                            "Connecting high-precision technology vendors with key end-user decision makers at the right place and time."
-                        </p>
-                    </div>
-                </div>
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
 
-            </div>
-        </div>
-    </section>
+    .section-title h2 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
 
-    <section id="vendors" class="py-20 bg-navy-900 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold font-brand uppercase tracking-widest text-gold-400">Primary Business Focus</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold font-brand text-white mt-2">Services Rendered to Vendors</h2>
-                <div class="w-16 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
-                <p class="text-slate-400 mt-4 text-sm sm:text-base leading-relaxed">
-                    Helping international manufacturers and niche technology providers solve market integration hurdles and establish a long-term commercial footprint in Saudi Arabia and Bahrain.
-                </p>
-            </div>
+    .section-title p {
+      color: var(--gold-text);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Service 1 -->
-                <div class="bg-navy-800 p-8 rounded-xl border border-gold-500/20 gold-border-hover transition-all duration-300 hover:-translate-y-1 shadow-lg">
-                    <div class="w-12 h-12 rounded bg-navy-700 border border-gold-500/40 flex items-center justify-center text-gold-400 text-xl font-bold mb-6">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                    </div>
-                    <h3 class="text-xl font-bold font-brand text-white mb-3">Market Footprint Establishment</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        Strategic guidance to navigate pre-qualification, vendor approval, and market entry protocols within Saudi Aramco, SABIC, and SEC.
-                    </p>
-                    <ul class="text-xs text-slate-400 space-y-2">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Prequalification roadmap</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Local market positioning</li>
-                    </ul>
-                </div>
+    /* --- Grid Layouts --- */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
 
-                <!-- Service 2 -->
-                <div class="bg-navy-800 p-8 rounded-xl border border-gold-500/20 gold-border-hover transition-all duration-300 hover:-translate-y-1 shadow-lg">
-                    <div class="w-12 h-12 rounded bg-navy-700 border border-gold-500/40 flex items-center justify-center text-gold-400 text-xl font-bold mb-6">
-                        <i class="fa-solid fa-puzzle-piece"></i>
-                    </div>
-                    <h3 class="text-xl font-bold font-brand text-white mb-3">Niche Product Integration</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        Solving complex integration challenges for specialized high-tech products into existing plant infrastructures and engineering specifications.
-                    </p>
-                    <ul class="text-xs text-slate-400 space-y-2">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Specification alignment</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Overcoming entry barriers</li>
-                    </ul>
-                </div>
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
 
-                <!-- Service 3 -->
-                <div class="bg-navy-800 p-8 rounded-xl border border-gold-500/20 gold-border-hover transition-all duration-300 hover:-translate-y-1 shadow-lg">
-                    <div class="w-12 h-12 rounded bg-navy-700 border border-gold-500/40 flex items-center justify-center text-gold-400 text-xl font-bold mb-6">
-                        <i class="fa-solid fa-users-gear"></i>
-                    </div>
-                    <h3 class="text-xl font-bold font-brand text-white mb-3">Key Decision-Maker Access</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        Connecting vendor leadership directly with relevant project managers, technical leads, and procurement teams at the right time.
-                    </p>
-                    <ul class="text-xs text-slate-400 space-y-2">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Targeted executive outreach</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Technical presentation support</li>
-                    </ul>
-                </div>
+    /* --- Cards --- */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 30px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
 
-            </div>
-        </div>
-    </section>
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold-primary);
+    }
 
-    <section id="technical" class="py-20 bg-navy-850 border-t border-b border-gold-500/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold font-brand uppercase tracking-widest text-gold-400">Technical Depth & Field Experience</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold font-brand text-white mt-2">Core SME Engineering Focus</h2>
-                <div class="w-16 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
-            </div>
+    .card-icon {
+      font-size: 2rem;
+      color: var(--gold-primary);
+      margin-bottom: 20px;
+    }
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- SME 1 -->
-                <div class="bg-navy-900 p-8 rounded-xl border border-gold-500/20 flex items-start space-x-5">
-                    <div class="w-12 h-12 rounded bg-navy-800 border border-gold-500/40 flex items-center justify-center text-gold-400 text-xl flex-shrink-0">
-                        <i class="fa-solid fa-sliders"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold font-brand text-white mb-2">Valve Diagnostics & Optimization</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            In-depth evaluation, signature analysis, control loop performance tuning, and diagnostic troubleshooting for critical process valves.
-                        </p>
-                    </div>
-                </div>
+    .card h3 {
+      color: #ffffff;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
 
-                <!-- SME 2 -->
-                <div class="bg-navy-900 p-8 rounded-xl border border-gold-500/20 flex items-start space-x-5">
-                    <div class="w-12 h-12 rounded bg-navy-800 border border-gold-500/40 flex items-center justify-center text-gold-400 text-xl flex-shrink-0">
-                        <i class="fa-solid fa-rotate"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold font-brand text-white mb-2">Rotating Equipment Control Support</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Control system optimization and troubleshooting for critical turbomachinery, high-speed compressors, and turbine auxiliaries.
-                        </p>
-                    </div>
-                </div>
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
 
-                <!-- SME 3 -->
-                <div class="bg-navy-900 p-8 rounded-xl border border-gold-500/20 flex items-start space-x-5">
-                    <div class="w-12 h-12 rounded bg-navy-800 border border-gold-500/40 flex items-center justify-center text-gold-400 text-xl flex-shrink-0">
-                        <i class="fa-solid fa-gauge-high"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold font-brand text-white mb-2">Governor & TTV Valve Actuation</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Specialized technical support for Trip Throttle Valve (TTV) systems, electronic governor upgrades, and hydraulic actuation retrofits.
-                        </p>
-                    </div>
-                </div>
+    .card ul {
+      list-style: none;
+      margin-top: 15px;
+    }
 
-                <!-- SME 4 -->
-                <div class="bg-navy-900 p-8 rounded-xl border border-gold-500/20 flex items-start space-x-5">
-                    <div class="w-12 h-12 rounded bg-navy-800 border border-gold-500/40 flex items-center justify-center text-gold-400 text-xl flex-shrink-0">
-                        <i class="fa-solid fa-gears"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold font-brand text-white mb-2">Actuation Subject Matter Expertise</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            End-to-end actuation consulting, root-cause failure analysis (RCFA), and selecting resilient actuation technology for severe environments.
-                        </p>
-                    </div>
-                </div>
+    .card ul li {
+      color: var(--text-light);
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
 
-            </div>
-        </div>
-    </section>
+    .card ul li i {
+      color: var(--gold-primary);
+      margin-top: 4px;
+    }
 
-    <section id="end-users" class="py-20 bg-navy-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-navy-800 rounded-2xl p-8 sm:p-12 border border-gold-500/30 shadow-2xl relative overflow-hidden">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    
-                    <div class="lg:col-span-8 space-y-4">
-                        <span class="text-xs font-bold font-brand uppercase tracking-widest text-gold-400">Independent Engineering Advisory</span>
-                        <h2 class="text-3xl font-extrabold font-brand text-white">Unbiased Solutions for End Users</h2>
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                            For operators like <strong>Saudi Aramco, SABIC, and SEC</strong>, Kausser Solutions delivers open-ended technical advisory independent of any OEM tagline or vendor bias. We focus purely on finding the optimal engineering solution for your operational challenges.
-                        </p>
-                        <div class="pt-2 flex flex-wrap gap-4 text-xs font-semibold text-gold-300">
-                            <span><i class="fa-solid fa-circle-check mr-1.5 text-gold-400"></i> Vendor-Independent</span>
-                            <span><i class="fa-solid fa-circle-check mr-1.5 text-gold-400"></i> Open-Ended Engineering</span>
-                            <span><i class="fa-solid fa-circle-check mr-1.5 text-gold-400"></i> Performance Focused</span>
-                        </div>
-                    </div>
+    /* --- Regional Footprint Banner --- */
+    .footprint-banner {
+      background: var(--navy-light);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 40px;
+    }
 
-                    <div class="lg:col-span-4 text-center lg:text-right">
-                        <a href="#contact" class="inline-block px-8 py-3.5 rounded font-brand font-bold text-xs uppercase tracking-wider gold-gradient-bg text-navy-950 hover:brightness-110 transition shadow-lg gold-glow">
-                            Consult With Us
-                        </a>
-                    </div>
+    .footprint-banner h3 {
+      color: var(--gold-text);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
 
-                </div>
-            </div>
-        </div>
-    </section>
+    /* --- Contact Section --- */
+    .contact-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
 
-    <section id="contact" class="py-20 bg-navy-850 border-t border-gold-500/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                
-                <!-- Business Card Information -->
-                <div class="lg:col-span-5 space-y-6">
-                    <div>
-                        <span class="text-xs font-bold font-brand uppercase tracking-widest text-gold-400">Contact Us</span>
-                        <h2 class="text-3xl font-extrabold font-brand text-white mt-2">Get in Touch</h2>
-                        <div class="w-16 h-1 gold-gradient-bg mt-4 rounded-full"></div>
-                    </div>
+    .contact-info h3 {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
 
-                    <!-- Digital Business Card -->
-                    <div class="p-8 rounded-xl bg-navy-900 border border-gold-500/30 space-y-6 shadow-xl relative">
-                        <div class="flex items-start justify-between">
-                            <div>
-                                <h3 class="text-2xl font-bold font-brand text-white">Ali Zubair Khan</h3>
-                                <p class="text-xs font-bold font-brand tracking-widest text-gold-400 uppercase mt-1">CEO-FOUNDER</p>
-                            </div>
-                            <div class="w-10 h-10">
-                                <svg viewBox="0 0 300 300" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M 50,30 L 105,30 L 105,210 L 50,210 Z" fill="url(#brandGoldHero)" />
-                                    <path d="M 105,152 L 210,30 L 275,30 L 170,152 Z" fill="url(#brandGoldHero)" />
-                                    <polygon points="170,152 270,270 270,210 210,138 105,138" fill="url(#brandGoldHero)" />
-                                    <rect x="180" y="152" width="60" height="60" transform="rotate(45 180 152)" fill="url(#brandGoldHero)" />
-                                </svg>
-                            </div>
-                        </div>
+    .contact-info .founder-title {
+      color: var(--gold-text);
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
 
-                        <hr class="border-gold-500/20">
-
-                        <div class="space-y-4 text-sm text-slate-300">
-                            <a href="mailto:Ali.khan@kausser.com" class="flex items-center space-x-3 hover:text-gold-400 transition">
-                                <i class="fa-solid fa-envelope text-gold-400 w-5"></i>
-                                <span>Ali.khan@kausser.com</span>
-                            </a>
-                            <a href="tel:+966598312345" class="flex items-center space-x-3 hover:text-gold-400 transition">
-                                <i class="fa-solid fa-phone text-gold-400 w-5"></i>
-                                <span>+966 59 83 12345</span>
-                            </a>
-                            <div class="flex items-center space-x-3">
-                                <i class="fa-solid fa-location-dot text-gold-400 w-5"></i>
-                                <span>Kingdom of Saudi Arabia - Bahrain</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <i class="fa-solid fa-globe text-gold-400 w-5"></i>
-                                <span>www.Kausser.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="lg:col-span-7 bg-navy-900 p-8 rounded-xl border border-gold-500/20 shadow-xl">
-                    <h3 class="text-2xl font-bold font-brand text-white mb-6">Send an Inquiry</h3>
-                    
-                    <form id="contact-form" onsubmit="submitForm(event)" class="space-y-5">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
-                                <input type="text" required class="w-full px-4 py-2.5 rounded bg-navy-800 border border-gold-500/20 text-white focus:border-gold-400 outline-none transition text-sm">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-300 mb-1">Company *</label>
-                                <input type="text" required class="w-full px-4 py-2.5 rounded bg-navy-800 border border-gold-500/20 text-white focus:border-gold-400 outline-none transition text-sm">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-300 mb-1">Email *</label>
-                                <input type="email" required class="w-full px-4 py-2.5 rounded bg-navy-800 border border-gold-500/20 text-white focus:border-gold-400 outline-none transition text-sm">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-300 mb-1">Phone</label>
-                                <input type="tel" class="w-full px-4 py-2.5 rounded bg-navy-800 border border-gold-500/20 text-white focus:border-gold-400 outline-none transition text-sm">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1">Message *</label>
-                            <textarea rows="4" required class="w-full px-4 py-2.5 rounded bg-navy-800 border border-gold-500/20 text-white focus:border-gold-400 outline-none transition text-sm" placeholder="Tell us about your product or technical requirements..."></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full py-3.5 rounded font-brand font-bold text-xs uppercase tracking-wider gold-gradient-bg text-navy-950 hover:brightness-110 transition shadow-lg gold-glow">
-                            Submit Inquiry <i class="fa-solid fa-paper-plane ml-2"></i>
-                        </button>
-
-                        <div id="form-msg" class="hidden p-3 rounded bg-emerald-900/50 border border-emerald-500/40 text-emerald-300 text-xs text-center">
-                            Thank you. Your message has been received!
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-10 bg-navy-950 border-t border-gold-500/20 text-xs text-slate-400">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center space-x-3">
-                <div class="w-6 h-6">
-                    <svg viewBox="0 0 300 300" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M 50,30 L 105,30 L 105,210 L 50,210 Z" fill="url(#brandGoldHero)" />
-                        <path d="M 105,152 L 210,30 L 275,30 L 170,152 Z" fill="url(#brandGoldHero)" />
-                        <polygon points="170,152 270,270 270,210 210,138 105,138" fill="url(#brandGoldHero)" />
-                        <rect x="180" y="152" width="60" height="60" transform="rotate(45 180 152)" fill="url(#brandGoldHero)" />
-                    </svg>
-                </div>
-                <span class="font-brand font-bold text-white tracking-wider">KAUSSER SOLUTIONS</span>
-            </div>
-            <p>&copy; 2026 Kausser Solutions. Kingdom of Saudi Arabia - Bahrain. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Form submission demo handler
-        function submitForm(e) {
-            e.preventDefault();
-            const msg = document.getElementById('form-msg');
-            msg.classList.remove('hidden');
-            setTimeout(() => {
-                msg.classList.add('hidden');
-                document.getElementById('contact-form').reset();
-            }, 3000);
-        }
-    </script>
-</body>
-</html>
+    .contact-details {
+      list-style: none;
